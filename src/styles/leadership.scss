@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+.leader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+
+    .picture {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .content {
+        flex: 1;
+        padding-left: 1.5rem;
+        color: #222222;
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 2rem;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: left;
+        }
+    }
+}
+// Larger than xs breakpoint
+@include respond-to(xs) {
+    .leader {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.leader-header {
+    font-size: 3rem;
+    font-weight: bold;
+}
