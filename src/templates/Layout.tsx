@@ -1,12 +1,19 @@
-import { PageProps } from 'gatsby';
 import React from 'react';
+
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import "../styles/styles.scss";
 
-const Layout = (props: PageProps) => {
+
+const Layout = ({ children, page }) => {
     return (
-        <main>
-            { props.children }
-        </main>
+        <>
+            <Header page={ page } />
+            <main>
+                { children }
+            </main>
+            <Footer />
+        </>
     );
 }
 
