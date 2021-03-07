@@ -9,9 +9,9 @@ const Layout = ({ children, page }) => {
     return (
         <>
             <Header page={ page } />
-            <main>
-                { children }
-            </main>
+                <main>
+                    { children }
+                </main>
             <Footer />
         </>
     );
