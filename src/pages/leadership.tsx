@@ -33,9 +33,7 @@ export const query = graphql`
           role
           profilePicture {
             childImageSharp {
-              fixed(quality: 80, width: 200, height: 200) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(width: 200, height:200)
             }
           }
         }

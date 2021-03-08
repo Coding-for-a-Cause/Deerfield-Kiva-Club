@@ -1,19 +1,19 @@
 import React from "react"
 import { Leader } from "../types"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 type LeaderProps = {
   leader: Leader
 }
 
 export default function LeaderComponent(props: LeaderProps) {
-  const { leader } = props
+  const { leader } = props;
+  // @ts-ignore
+  const image = getImage(props.leader.frontmatter.profilePicture);
   return (
     <div className="leader">
       <div className="picture">
-        <Img
-          fixed={leader.frontmatter.profilePicture.childImageSharp.fixed}
-        ></Img>
+        <GatsbyImage image={image} alt={props.leader.frontmatter.name} />
       </div>
       <div className="content">
         <h1>
