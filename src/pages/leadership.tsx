@@ -1,6 +1,6 @@
 import { PageProps, graphql } from "gatsby"
 import React from "react"
-import Layout from "../templates/Layout"
+import TitleLayout from "../templates/TitleLayout"
 import "../styles/leadership.scss"
 import { Leader as LeaderType } from "../types"
 import Leader from "../components/Leader"
@@ -19,16 +19,16 @@ const Leadership = (
     )
   })
   return (
-    <Layout>
+    <TitleLayout title={"Deerfield High School KIVA Leadership Team"}>
       <div className="pad">
-        <h1 className="leader-header">
+        {/* <h1 className="leader-header">
           Deerfield High School KIVA Leadership Team
-        </h1>
+        </h1> */}
         {leaders.map(leader => (
           <Leader key={leader.frontmatter.name} leader={leader} />
         ))}
       </div>
-    </Layout>
+    </TitleLayout>
   )
 }
 

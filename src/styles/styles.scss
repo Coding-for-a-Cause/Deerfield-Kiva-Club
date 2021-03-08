@@ -3,9 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
 
-$green: #4faf4e;
-
-
 .container {
     @include max-w(lg);
     margin: 0 auto;
@@ -13,6 +10,17 @@ $green: #4faf4e;
 
 .pad {
     padding: 0 1rem;
+}
+
+.page-title {
+    padding: 3rem 0;
+    background: $green;
+    color: $beige;
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
 }
 
 @include respond-to(xs) {
@@ -24,6 +32,12 @@ $green: #4faf4e;
 @include respond-to(sm) {
     .pad {
         padding: 0 3rem;
+    }
+
+    .page-title {
+        h1 {
+            font-size: 3.25rem;
+        }
     }
 }
 
@@ -71,7 +85,7 @@ header {
                 font-size: 24px;
 
                 a {
-                    color: #FFF;
+                    color: $beige;
                     text-decoration: none;
                 }
             }
@@ -90,18 +104,18 @@ header {
 
                 a {
                     text-decoration: none;
-                    color: #FFF;
+                    color: $beige;
                     font-weight: 600;
 
                     transition: 0.2s ease-in-out;
 
                     &:hover {
-                        color: $green;
+                        color: $dark-green;
                     }
                 }
 
                 &.currPage a {
-                    color: $green;
+                    color: $dark-green;
                 }
             }
         }
