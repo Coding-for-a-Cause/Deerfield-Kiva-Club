@@ -18,9 +18,9 @@ const Layout = ({ children, page }: LayoutProps) => {
     return (
         <>
             <Header page={ page || "" } />
-                <main>
-                    { children }
-                </main>
+            <main>
+                { children }
+            </main>
             <Footer />
         </>
     );
