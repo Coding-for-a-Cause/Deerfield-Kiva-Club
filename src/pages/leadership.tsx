@@ -1,6 +1,6 @@
 import { PageProps, graphql } from "gatsby"
 import React from "react"
-import Layout from "../templates/Layout"
+import TitleLayout from "../templates/TitleLayout"
 import "../styles/leadership.scss"
 import { Leader as LeaderType } from "../types"
 import Leader from "../components/Leader"
@@ -8,14 +8,27 @@ import Leader from "../components/Leader"
 const Leadership = (
   props: PageProps & { data: { allMarkdownRemark: { nodes: [LeaderType] } } }
 ) => {
-  const leaders = props.data.allMarkdownRemark.nodes
+  let leaders = props.data.allMarkdownRemark.nodes
+  // Sorts the array so that Co-Presidents always show up before sponsors
+  // Note: Array is already sorted by leadership years
+  leaders.sort((firstEl, secondEl) => {
+    const order = ["Co-President", "Sponsor"]
+    return (
+      order.indexOf(firstEl.frontmatter.role) -
+      order.indexOf(secondEl.frontmatter.role)
+    )
+  })
   return (
-    <Layout>
-      <h1 className="leader-header">Deerfield High School KIVA Leadership Team</h1>
-      {leaders.map(leader => (
-        <Leader key={leader.frontmatter.name} leader={leader} />
-      ))}
-    </Layout>
+    <TitleLayout title={"Deerfield High School KIVA Leadership Team"}>
+      <div className="pad">
+        {/* <h1 className="leader-header">
+          Deerfield High School KIVA Leadership Team
+        </h1> */}
+        {leaders.map(leader => (
+          <Leader key={leader.frontmatter.name} leader={leader} />
+        ))}
+      </div>
+    </TitleLayout>
   )
 }
 
@@ -23,6 +36,7 @@ export const query = graphql`
   query LeadershipQuery {
     allMarkdownRemark(
       filter: { fields: { collection: { eq: "leadership" } } }
+      sort: { fields: frontmatter___leadershipYears }
     ) {
       nodes {
         html
@@ -33,9 +47,7 @@ export const query = graphql`
           role
           profilePicture {
             childImageSharp {
-              fixed(quality: 80, width: 200, height: 200) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(width: 200, height: 200)
             }
           }
         }

@@ -3,7 +3,7 @@ export type LeadershipFrontmatter = {
   leadershipYears: string
   role: string
   email: string
-  profilePicture: { childImageSharp: { fixed?: any; fluid?: any } }
+  profilePicture: { childImageSharp: { gatsbyImageData: any } }
 }
 
 export type Leader = {

@@ -1,9 +1,45 @@
 @import "./normalize.css";
+@import "./variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
 
-$green: #4faf4e;
+.container {
+    @include max-w(lg);
+    margin: 0 auto;
+}
 
+.pad {
+    padding: 0 1rem;
+}
+
+.page-title {
+    padding: 3rem 0;
+    background: $green;
+    color: $beige;
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+
+@include respond-to(xs) {
+    .pad {
+        padding: 0 1.5rem;
+    }
+}
+
+@include respond-to(sm) {
+    .pad {
+        padding: 0 3rem;
+    }
+
+    .page-title {
+        h1 {
+            font-size: 3.25rem;
+        }
+    }
+}
 
 body {
     background: white;
@@ -16,7 +52,7 @@ body {
 header {
     position: fixed;
     width: 100%;
-    
+
     nav {
         background-color: transparent;
         color: white;
@@ -28,18 +64,19 @@ header {
         &.scrolled {
             box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
             background-color: #FFF;
-            
+
             div.logo span a {
                 color: #000;
             }
-            
+
             ul li a {
                 color: #000;
             }
         }
-        
+
         div.logo {
             display: inline-block;
+
             span {
                 margin: 0 1em 0 1.5em;
                 vertical-align: middle;
@@ -48,7 +85,7 @@ header {
                 font-size: 24px;
 
                 a {
-                    color: #FFF;
+                    color: $beige;
                     text-decoration: none;
                 }
             }
@@ -59,7 +96,7 @@ header {
             list-style-type: none;
             text-decoration: none;
             margin: 0;
-            
+
             li {
                 display: inline;
                 vertical-align: middle;
@@ -67,18 +104,18 @@ header {
 
                 a {
                     text-decoration: none;
-                    color: #FFF;
+                    color: $beige;
                     font-weight: 600;
 
                     transition: 0.2s ease-in-out;
 
                     &:hover {
-                        color: $green;
+                        color: $dark-green;
                     }
                 }
 
                 &.currPage a {
-                    color: $green;
+                    color: $dark-green;
                 }
             }
         }
