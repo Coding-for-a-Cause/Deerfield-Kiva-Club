@@ -1,7 +1,5 @@
 import React from "react"
-
 import Layout from "./Layout"
-import "../styles/styles.scss"
 
 type TitleLayoutProps = {
   children: any
