@@ -1,0 +1,97 @@
+yarn run v1.22.0
+$ gatsby build
+success open and validate gatsby-configs - 0.174s
+
+[2K[1A[2K[Gsuccess load plugins - 1.890s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.055s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.006s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.450s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.043s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.021s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 0.279s
+
+[2K[1A[2K[Gsuccess building schema - 1.109s
+
+[2K[1A[2K[Ginfo Total nodes: 54, SitePage nodes: 1 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess createPages - 0.004s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.190s
+
+[2K[1A[2K[Gsuccess Cleaning up stale page-data - 0.004s
+
+[2K[1A[2K[Gsuccess update schema - 0.104s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.002s
+
+[2K[1A[2K[Gsuccess extract queries from components - 2.625s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.002s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.028s
+
+[2K[1A[2K[Ginfo bootstrap finished - 15.555s
+
+[2K[1A[2K[Gsuccess write out requires - 0.010s
+
+[2K[1A[2K[Gsuccess Building production JavaScript and CSS bundles - 12.705s
+
+[2K[1A[2K[Gsuccess Building HTML renderer - 3.907s
+
+[2K[1A[2K[Gfailed Building static HTML for pages - 0.298s
+
+[2K[1A[2K[G
+ ERROR #95312
+
+"window" is not available during server side rendering.
+
+See our docs page for more info on this error: https://gatsby.dev/debug-html
+
+
+[2K[1A[2K[G
+  35 |     render() {
+  36 |         const { page } = this.props;
+> 37 |         window.onscroll = this.handleScroll;
+     |         ^
+  38 |
+  39 |         return (
+  40 |             <nav className={ this.state.scrolled? "scrolled" : "" }
+onScroll={ this.handleScroll }>
+
+[0m
+[0m  [0m[97m[41mWebpackError[0m[37m[41m:[0m[37m[41m [0m[97m[41mReferenceError: window is not defined[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mNavbar.tsx[0m[90m:[0m[93m37[0m[37m [0m
+[0m  [0m  [0m[90mgatsby-starter-hello-world/src/components/Navbar.tsx:37:9[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextends.js[0m[90m:[0m[93m7[0m[37m [0m
+[0m  [0m  [0m[90m[gatsby-starter-hello-world]/[@babel]/runtime/helpers/extends.js:7:1[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextends.js[0m[90m:[0m[93m8[0m[37m [0m
+[0m  [0m  [0m[90m[gatsby-starter-hello-world]/[@babel]/runtime/helpers/extends.js:8:1[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextends.js[0m[90m:[0m[93m14[0m[37m [0m
+[0m  [0m  [0m[90m[gatsby-starter-hello-world]/[@babel]/runtime/helpers/extends.js:14:1[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextends.js[0m[90m:[0m[93m13[0m[37m [0m
+[0m  [0m  [0m[90m[gatsby-starter-hello-world]/[@babel]/runtime/helpers/extends.js:13:1[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mstatic-entry.js[0m[90m:[0m[93m263[0m[37m [0m
+[0m  [0m  [0m[90mgatsby-starter-hello-world/.cache/static-entry.js:263:20[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mhistory.js[0m[90m:[0m[93m26[0m[37m [0m
+[0m  [0m  [0m[90m[gatsby-starter-hello-world]/[@gatsbyjs]/reach-router/es/lib/history.js:26:1[0m
+  [0m
+[0m
+
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
