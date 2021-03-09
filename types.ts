@@ -3,10 +3,10 @@ export type LeadershipFrontmatter = {
   leadershipYears: string
   role: string
   email: string
-  profilePicture: { childImageSharp: { gatsbyImageData: any } }
+  profilePicture: string
 }
 
 export type Leader = {
-  frontmatter: LeadershipFrontmatter
-  html: string
+  data: LeadershipFrontmatter
+  contents: string
 }
