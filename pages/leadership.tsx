@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const basedir = path.join(process.cwd(), 'data', 'leadership');
   const files = fs.readdirSync(basedir, 'utf-8');
 
-  const leaders = files.map((filename) => {
+  let leaders = files.map((filename) => {
     const markdownWithMetadata = fs.readFileSync(
       path.join(basedir, filename),
       'utf-8',
@@ -41,6 +41,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
       contents: parsedMarkdown.content,
       data: parsedMarkdown.data,
     };
+  });
+
+  // Sort leaders so that Co-Presidents show up before sponsors
+  leaders = leaders.sort((firstElem, secondElem) => {
+    const order = ['Co-President', 'Sponsor'];
+    return (
+      order.indexOf(firstElem.data.role) - order.indexOf(secondElem.data.role)
+    );
   });
 
   return {
