@@ -37,7 +37,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
         // window.onscroll = this.handleScroll;
 
         return (
-            <nav className={ this.state.scrolled? "scrolled" : "" } onScroll={ this.handleScroll }>
+            <nav className={ this.state.scrolled? "scrolled" : "" } /*onScroll={ this.handleScroll }*/>
                 <div className="logo">
                     <span><Link href="/">Kiva Deerfield</Link></span>
                 </div>
