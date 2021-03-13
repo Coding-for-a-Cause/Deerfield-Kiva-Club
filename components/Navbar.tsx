@@ -45,10 +45,10 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
                 <ul className="nav-link-wrapper">
                     <li className={page === "home"? "currPage" : ""}><Link href="/home"><a>Home</a></Link></li>
                     <li className={page === "about"? "currPage" : ""}><Link href="#"><a>About Us</a></Link></li>
-                    <li className={page === "join"? "currPage" : ""}><Link href="/join-us"><a>Join Us</a></Link></li>
+                    <li className={page === "join-us"? "currPage" : ""}><Link href="/join-us"><a>Join Us</a></Link></li>
                     <li className={page === "leadership"? "currPage" : ""}><Link href="/leadership"><a>Leadership</a></Link></li>
                     <li className={page === "loans"? "currPage" : ""}><Link href="#"><a>Outstanding Loans</a></Link></li>
-                    <li className={page === "minutes"? "currPage" : ""}><Link href="#"><a>Meeting Minutes</a></Link></li>
+                    <li className={page === "minutes"? "currPage" : ""}><Link href="/meeting-minutes"><a>Meeting Minutes</a></Link></li>
                 </ul>
             </nav>
         );
