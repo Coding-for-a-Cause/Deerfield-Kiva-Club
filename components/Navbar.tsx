@@ -3,11 +3,12 @@ import React, { useEffect } from "react";
 
 
 type NavbarProps = {
-    page: string
+    page: string;
 }
 
 type NavbarState = {
-    scrolled: boolean
+    scrolled: boolean;
+    open: boolean;
 }
 
 
@@ -16,42 +17,55 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
         super(props);
 
         this.state = {
-            scrolled: false
+            scrolled: false,
+            open: false
         };
-
+        
         // this.handleScroll = this.handleScroll.bind(this);
     }
 
 
-    // handleScroll = () => {
+    handleScroll = () => {
 
-    //     if (window.scrollY > document.querySelector('header').clientHeight) {
-    //         this.setState({ scrolled: true })
-    //     } else {
-    //         this.setState({ scrolled: false });
-    //     }
-    // }
+        if (window.scrollY > document.querySelector('header').clientHeight) {
+            this.setState({ scrolled: true })
+        } else {
+            this.setState({ scrolled: false });
+        }
+    }
+
+    toggleNav = () => {
+        this.setState({ open: !this.state.open });
+    }
 
     render() {
         const { page } = this.props;
-        // window.onscroll = this.handleScroll;
+        
 
         return (
-            <nav className={ this.state.scrolled? "scrolled" : "" } /*onScroll={ this.handleScroll }*/>
-                <div className="logo">
-                    <span><Link href="/">Kiva Deerfield</Link></span>
-                </div>
+            <>
+                <span className="nav-toggle" onClick={ this.toggleNav }>&#8801;</span>
+                <nav className={ `${this.state.scrolled? "scrolled" : ""} ${this.state.open? "open" : ""}` } /*onScroll={ this.handleScroll }*/>
+                    {/* <span className="nav-close">&times;</span> */}
+                    <div className="logo">
+                        <span><Link href="/">Kiva Deerfield</Link></span>
+                    </div>
 
-                <ul className="nav-link-wrapper">
-                    <li className={page === "home"? "currPage" : ""}><Link href="/home"><a>Home</a></Link></li>
-                    <li className={page === "about"? "currPage" : ""}><Link href="#"><a>About Us</a></Link></li>
-                    <li className={page === "join-us"? "currPage" : ""}><Link href="/join-us"><a>Join Us</a></Link></li>
-                    <li className={page === "leadership"? "currPage" : ""}><Link href="/leadership"><a>Leadership</a></Link></li>
-                    <li className={page === "loans"? "currPage" : ""}><Link href="#"><a>Outstanding Loans</a></Link></li>
-                    <li className={page === "minutes"? "currPage" : ""}><Link href="/meeting-minutes"><a>Meeting Minutes</a></Link></li>
-                </ul>
-            </nav>
+                    <ul className="nav-link-wrapper">
+                        <li className={ page === ""? "currPage" : "" }><Link href="/"><a>Home</a></Link></li>
+                        {/* <li className={ page === "about"? "currPage" : "" }><Link href="#"><a>About Us</a></Link></li> */}
+                        <li className={ page === "join"? "currPage" : "" }><Link href="/join-us"><a>Join Us</a></Link></li>
+                        <li className={ page === "leadership"? "currPage" : "" }><Link href="/leadership"><a>Leadership</a></Link></li>
+                        <li className={ page === "loans"? "currPage" : "" }><Link href="/loans"><a>Outstanding Loans</a></Link></li>
+                        <li className={ page === "minutes"? "currPage" : "" }><Link href="/meeting-minutes"><a>Meeting Minutes</a></Link></li>
+                    </ul>
+                </nav>
+            </>
         );
+    }
+
+    componentDidMount() {
+        window.onscroll = this.handleScroll;
     }
 }
 
