@@ -204,15 +204,32 @@ footer {
 ::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
-
-    &-track {
-
-    }
 }
+
+// ::-webkit-scrollbar-button:single-button {
+//     background-color: red;
+//     display: block;
+//     width: 16px;
+//     height: 16px;
+//     border-style: solid;
+// }
+
+// // Up scroll button
+// ::-webkit-scrollbar-button:single-button:vertical:decrement {
+//     border-width: 0 8px 8px 8px;
+//     border-color: transparent transparent #555555 transparent;
+// }
+
+// // Down scroll button
+// ::-webkit-scrollbar-button:single-button:vertical:increment {
+//     border-width: 8px 8px 0 8px;
+//     border-color: #555555 transparent transparent transparent;
+// }
 
 ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.4);
     transition: 0.3s;
+    background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-track {
