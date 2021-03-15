@@ -53,7 +53,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
 
                     <ul className="nav-link-wrapper">
                         <li className={ page === ""? "currPage" : "" }><Link href="/"><a>Home</a></Link></li>
-                        <li className={ page === "about"? "currPage" : "" }><Link href="#"><a>About Us</a></Link></li>
+                        {/* <li className={ page === "about"? "currPage" : "" }><Link href="#"><a>About Us</a></Link></li> */}
                         <li className={ page === "join"? "currPage" : "" }><Link href="/join-us"><a>Join Us</a></Link></li>
                         <li className={ page === "leadership"? "currPage" : "" }><Link href="/leadership"><a>Leadership</a></Link></li>
                         <li className={ page === "loans"? "currPage" : "" }><Link href="#"><a>Outstanding Loans</a></Link></li>
