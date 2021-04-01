@@ -27,6 +27,12 @@ body {
     }
 }
 
+.title--center {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
 @include respond-to(xs) {
     .pad {
         padding: 0 1.5rem;
