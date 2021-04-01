@@ -58,6 +58,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
                         <li className={ page === "leadership"? "currPage" : "" }><Link href="/leadership"><a>Leadership</a></Link></li>
                         <li className={ page === "loans"? "currPage" : "" }><Link href="/loans"><a>Outstanding Loans</a></Link></li>
                         <li className={ page === "minutes"? "currPage" : "" }><Link href="/meeting-minutes"><a>Meeting Minutes</a></Link></li>
+                        <li className={ page === "request-form" ? "currPage" : "" }><Link href="/request-form"><a>Suggest a Loan</a></Link></li>
                     </ul>
                 </nav>
             </>
